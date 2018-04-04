@@ -9,3 +9,16 @@ from django.shortcuts import render, render
 def home(request):
     context = 'Hello Bhujay'
     return render(request,'home.html')
+
+def home2(request):
+    context = 'Hello Bhujay'
+    return render(request,'home2.html')
+
+def svg(request):
+    ds1 = [10, 5, 10, 100, 15, 18, 25, 20, 18, 50, 70, 100,1,2,3, 10 , 15, 9, 7 , 40, 14, 55, 75, 80, 85, 100, 99, 95,
+           10, 5, 10, 100, 15, 18, 25, 20, 18, 50, 70, 100,1,2,3, 10 , 15, 9, 7 , 40, 14, 55, 75, 80, 85, 100, 99, 95 ]
+    #ds1 = [ 5, 10, 13, 19, 21, 25, 22, 18, 15, 13,
+    #11, 12, 15, 20, 18, 17, 16, 18, 23, 25 ]
+    context = {'ds1': ds1, 'msg': 'Hello Bhujay'}
+    return render(request,'svg.html', context)
+
