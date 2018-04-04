@@ -1,11 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-
 from django.shortcuts import render, render
-
 # Create your views here.
-
-
 def home(request):
     context = 'Hello Bhujay'
     return render(request,'home.html')
@@ -30,4 +26,14 @@ def svgline(request):
     #11, 12, 15, 20, 18, 17, 16, 18, 23, 25 ]
     context = {'ds1': ds1, 'msg': 'Hello Bhujay'}
     return render(request,'svgline.html', context)
+
+def rickshaw1(request):    
+    ds1 = [ 
+            { x: 0, y: 40 }, 
+            { x: 1, y: 49 }, 
+            { x: 2, y: 38 }, 
+            { x: 3, y: 30 }, 
+            { x: 4, y: 32 } ]
+    context = {'ds1': ds1, 'msg': 'Hello Bhujay'}
+    return render(request,'rickshaw1.html', context)
 
