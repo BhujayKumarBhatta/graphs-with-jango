@@ -1,0 +1,27 @@
+<!doctype html> 
+<script  src="/static/nanoapp/d3/d3.min.js"></script>
+<script src="/static/nanoapp/rickshaw/rickshaw.min.js"></script> 
+ 
+<div id="chart"></div> 
+ 
+<script> 
+var ds1 =  [{% for d in ds1 %} {x: {{d.x}}, y: {{d.y}} },   {%  endfor %} ];
+var graph = new Rickshaw.Graph( {
+    element: document.querySelector("#chart"), 
+    width: 300, 
+    height: 200, 
+    series: [{
+        color: 'steelblue',
+        data: ds1
+       // data: [ 
+       //    { x: 0, y: 40 }, 
+       //     { x: 1, y: 49 }, 
+       //     { x: 2, y: 38 }, 
+       //     { x: 3, y: 30 }, 
+       //     { x: 4, y: 32 } ]
+    }]
+});
+ 
+graph.render();
+ 
+</script> 
