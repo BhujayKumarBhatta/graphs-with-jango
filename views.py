@@ -29,11 +29,11 @@ def svgline(request):
 
 def rickshaw1(request):    
     ds1 = [ 
-            { 'x': 0, 'y': 40 }, 
-            { 'x': 1, 'y': 49 }, 
-            { 'x': 2, 'y': 38 }, 
-            { 'x': 3, 'y': 30 }, 
-            { 'x': 4, 'y': 32 } ]
+            { 'x': 0, 'y': 0 }, 
+            { 'x': 5, 'y': 20 }, 
+            { 'x': 10, 'y': 38 }, 
+            { 'x': 15, 'y': 30 }, 
+            { 'x': 20, 'y': 56 } ]
     context = {'ds1': ds1, 'msg': 'Hello Bhujay'}
     return render(request,'rickshaw1.html', context)
 
