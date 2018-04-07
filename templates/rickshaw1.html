@@ -11,12 +11,14 @@
 var ds2 =  [{% for d in ds2 %} {x: {{d.x}}, y: {{d.y}} },   {%  endfor %} ];
 var graph = new Rickshaw.Graph( {
     element: document.querySelector("#chart"), 
-    width: 1000, 
+    width: 600, 
     height: 300, 
     //renderer: 'line',
     series: [{
         color: 'steelblue',
-        data: ds2       
+        data: ds2,
+        name: '% cpu util',
+        //scale: scales[0],
     }]
 });
 
@@ -29,7 +31,7 @@ var xAxis = new Rickshaw.Graph.Axis.Time({
 });
 
 var yAxis = new Rickshaw.Graph.Axis.Y({
-    graph: graph,
+    graph: graph,    
     tickFormat: Rickshaw.Fixtures.Number.formatKMBT
 });
 
@@ -38,13 +40,6 @@ var graphHover = new Rickshaw.Graph.HoverDetail({
 	});
  
 graph.render();
-
-
-
-
-
-
-
 
 
 </script> 
