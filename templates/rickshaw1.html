@@ -8,24 +8,24 @@
 <div id="chart"></div> 
  
 <script> 
-var ds1 =  [{% for d in ds1 %} {x: {{d.x}}, y: {{d.y}} },   {%  endfor %} ];
+var ds2 =  [{% for d in ds2 %} {x: {{d.x}}, y: {{d.y}} },   {%  endfor %} ];
 var graph = new Rickshaw.Graph( {
     element: document.querySelector("#chart"), 
-    width: 600, 
-    height: 200, 
-    renderer: 'line',
+    width: 1000, 
+    height: 300, 
+    //renderer: 'line',
     series: [{
         color: 'steelblue',
-        data: ds1       
+        data: ds2       
     }]
 });
 
-var time = new Rickshaw.Fixtures.Time();
-var seconds = time.unit('second');
+//var time = new Rickshaw.Fixtures.Time();
+//var seconds = time.unit('second');
 
 var xAxis = new Rickshaw.Graph.Axis.Time({
     graph: graph,
-    timeUnit: seconds
+   // timeUnit: seconds
 });
 
 var yAxis = new Rickshaw.Graph.Axis.Y({
